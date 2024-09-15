@@ -6,26 +6,34 @@ import {
 	ScrollRestoration,
 } from '@remix-run/react'
 
-import type { LinksFunction } from '@remix-run/node'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+import styles from './index.css?url'
 
-import './tailwind.css'
+import type { LinksFunction } from '@remix-run/cloudflare'
+
+import { css } from 'styled-system/css'
 
 export const links: LinksFunction = () => [
-	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+	{ rel: 'stylesheet', href: styles },
+	{
+		rel: 'preconnect',
+		href: 'https://fonts.googleapis.com',
+	},
 	{
 		rel: 'preconnect',
 		href: 'https://fonts.gstatic.com',
 		crossOrigin: 'anonymous',
 	},
 	{
+		href: 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap',
 		rel: 'stylesheet',
-		href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
 	},
 ]
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="ja">
 			<head>
 				<meta charSet="utf-8" />
 				<meta
@@ -36,7 +44,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 			</head>
 			<body>
-				{children}
+				<div
+					className={css({
+						display: 'flex',
+						flexDirection: 'column',
+						minHeight: '100vh',
+					})}
+				>
+					<Header />
+					<main
+						className={css({
+							flex: 1,
+						})}
+					>
+						{children}
+					</main>
+					<Footer />
+				</div>
 				<ScrollRestoration />
 				<Scripts />
 			</body>
