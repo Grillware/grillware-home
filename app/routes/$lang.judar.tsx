@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare'
-import { Link, useLoaderData } from '@remix-run/react'
+import { LoaderFunction, MetaFunction } from '@remix-run/cloudflare'
+import { useLoaderData } from '@remix-run/react'
 
 import { formatDate } from '~/components/utils/formatDate'
 
@@ -32,10 +32,10 @@ export const loader: LoaderFunction = async ({ context }) => {
 
 	const modelData = await Promise.all(
 		objects
-			.filter(({ key }) => key.endsWith('.gltf'))
+			.filter(({ key }) => key.endsWith('.png'))
 			.map(async ({ key, uploaded }) => {
-				const title = key.replace('.gltf', '')
-				const thumbnailUrl = `https://judar-bucket.grill-ware.com/${key.replace('.gltf', '.png')}`
+				const title = key.replace('.png', '')
+				const thumbnailUrl = `https://judar-bucket.grill-ware.com/${key}`
 				const exists = await checkImageExists(thumbnailUrl)
 				return {
 					key,
@@ -54,7 +54,7 @@ export const loader: LoaderFunction = async ({ context }) => {
 			new Date(b.uploaded).getTime() - new Date(a.uploaded).getTime()
 	)
 
-	return json(modelData)
+	return Response.json(modelData)
 }
 
 export default function Index() {
@@ -67,8 +67,12 @@ export default function Index() {
 		}[]
 	>()
 
+	// modelDataの長さを基準に降順
 	const [displayedModels, setDisplayedModels] = useState(
-		modelData.slice(0, 6)
+		modelData.slice(0, 6).map((model, index) => ({
+			...model,
+			displayIndex: modelData.length - index,
+		}))
 	)
 	const [currentPage, setCurrentPage] = useState(0)
 
@@ -84,10 +88,13 @@ export default function Index() {
 				setCurrentPage((prev) => prev + 1)
 				setDisplayedModels((prev) => [
 					...prev,
-					...modelData.slice(
-						(currentPage + 1) * 6,
-						(currentPage + 2) * 6
-					),
+					...modelData
+						.slice((currentPage + 1) * 6, (currentPage + 2) * 6)
+						.map((model, index) => ({
+							...model,
+							displayIndex:
+								modelData.length - (prev.length + index),
+						})),
 				])
 			}
 		}
@@ -95,17 +102,6 @@ export default function Index() {
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [currentPage, modelData])
-
-	const calculateDaysSince = (uploaded: string): number => {
-		const initialDate = new Date('2024-10-20') // 初日
-		const uploadedDate = new Date(uploaded) // uploadedの日付をDate型に変換
-
-		// 経過ミリ秒を計算
-		const timeDifference = uploadedDate.getTime() - initialDate.getTime()
-
-		// 経過日数を計算し、初日を含むため1を加算
-		return Math.floor(timeDifference / (1000 * 3600 * 24)) + 1
-	}
 
 	const styles = {
 		section: flex({
@@ -146,14 +142,10 @@ export default function Index() {
 		<section className={styles.section}>
 			{displayedModels.length > 0 ? (
 				displayedModels.map(
-					({ key, title, uploaded, thumbnailUrl }) => {
+					({ key, title, uploaded, thumbnailUrl, displayIndex }) => {
 						const trimmedTitle = title.split('/')[0]
 						return (
-							<Link
-								key={key}
-								to={`/please-enjoy/${key.replace(/\//g, '_')}`}
-								className={styles.card}
-							>
+							<div key={key}>
 								<img
 									src={thumbnailUrl}
 									alt={`Thumbnail for ${trimmedTitle}`}
@@ -162,7 +154,7 @@ export default function Index() {
 								<div className={styles.info}>
 									<div className={styles.title}>
 										<span className={styles.prefix}>
-											{calculateDaysSince(uploaded)}
+											{displayIndex}
 										</span>
 										{trimmedTitle}
 									</div>
@@ -170,7 +162,7 @@ export default function Index() {
 										{formatDate(uploaded)}
 									</div>
 								</div>
-							</Link>
+							</div>
 						)
 					}
 				)

@@ -1,0 +1,100 @@
+---
+title: Fundamentals of Statistical Analysis
+---
+
+import '../lab.css'
+import { KaTeX } from '../components/utils/Katex'
+
+## 1.1 Role and Purpose of Statistics
+
+Statistics is a discipline that enables us to understand and predict real-world phenomena through data analysis.  
+Its primary purpose lies in extracting meaningful insights amidst uncertainty and facilitating informed decision-making.  
+For instance, statistics are indispensable for predicting economic trends or evaluating the efficacy of medical treatments.
+
+The foundation of statistics lies in probability theory. [^1]  
+By analyzing how data is distributed and determining the extent of its predictability, statistics allow for more precise inferences.  
+This process transforms mere collections of data into actionable insights.
+
+[^1]: Probability theory, a branch of mathematics, originated in the 17th century from studies on gambling and game theory.
+
+In the following chapters, we will delve into the theoretical underpinnings of statistics and explore how they contribute to practical data analysis. Together, we will uncover the path to extracting truths hidden within data.
+
+## 1.2 Major Approaches to Statistical Analysis
+
+Statistical analysis can be broadly categorized into three approaches: **descriptive statistics**, **inferential statistics**, and **predictive statistics**.  
+Each approach serves distinct purposes and should be chosen based on the nature of the data.
+
+### Descriptive Statistics
+
+Descriptive statistics aim to summarize and organize data effectively. [^2]  
+This process allows us to derive key features from large datasets and grasp their overall patterns.  
+Below are examples of typical metrics used in descriptive statistics:
+
+| Metric             | Definition                                                                |
+| ------------------ | ------------------------------------------------------------------------- |
+| Mean               | Represents the central tendency of data                                   |
+| Median             | The middle value when data is ordered                                     |
+| Variance           | Indicates the degree of data variability                                  |
+| Standard Deviation | The square root of variance, offering an intuitive measure of variability |
+
+[^2]: Descriptive statistics trace their origins to demographic studies conducted between the late 17th and 18th centuries.
+
+### Inferential Statistics
+
+Inferential statistics involve drawing conclusions about a population based on sample data.  
+It encompasses methods for estimating population characteristics and testing hypotheses based on sample observations.  
+For instance, when evaluating the efficacy of a drug, data from a subset of patients is analyzed to infer its impact on the entire patient population.  
+Thus, inferential statistics enable understanding of broader trends from limited data.
+
+### Predictive Statistics
+
+Predictive statistics focus on forecasting future outcomes based on historical data. [^3]  
+Techniques such as regression analysis and time-series analysis are employed to develop models that predict future results.  
+Predictive statistics are widely used in fields such as business, economics, and healthcare to assess risks and identify opportunities.
+
+[^3]: Time-series analysis played a pivotal role in economic studies following World War I.
+
+## 1.3 Fundamental Concepts in Statistics
+
+Key concepts in statistics include **probability distributions**, **expected value**, **variance**, and **standard deviation**.  
+These serve as the foundation for understanding data characteristics and the uncertainties underlying them.
+
+### Probability Distributions and Expected Value
+
+A **probability distribution** defines how likely various outcomes of a random variable are and describes the relationship between possible values and their probabilities.  
+The most common distribution is the **normal distribution** (Gaussian distribution), which frequently appears in natural and social phenomena.  
+The normal distribution is symmetric around its mean and is mathematically expressed as follows:
+
+<KaTeX
+	expression="f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}"
+	isFormula={true}
+/>
+
+Here, $\mu$ is the mean, and $\sigma$ is the standard deviation.  
+Understanding normal distributions provides insight into the dispersion and concentration of data.
+
+The **expected value** represents the "average outcome" in a probability distribution.  
+It is calculated by multiplying each possible value of a random variable by its probability and summing the results.  
+The expected value is crucial for statistical estimation and decision-making. It is expressed as:
+
+<KaTeX expression="E[X] = \sum_{i=1}^{n} x_i p(x_i)" isFormula={true} />
+
+where $x_i$ denotes the outcomes, and $p(x_i)$ represents their respective probabilities.
+
+### Variance and Standard Deviation
+
+**Variance** measures how far the values in a dataset are spread out from their mean.  
+It is defined as the average of the squared deviations from the mean and is used to quantify the degree of variability in the data.  
+Variance is expressed as follows:
+
+<KaTeX
+	expression="Var(X) = E[(X - \mu)^2] = \sum_{i=1}^{n} (x_i - \mu)^2 p(x_i)"
+	isFormula={true}
+/>
+
+The **standard deviation**, as the square root of variance, represents the variability of data in the same units as the data itself, making it easier to interpret intuitively.  
+It is expressed as:
+
+<KaTeX expression="SD(X) = \sqrt{Var(X)}" isFormula={true} />
+
+A smaller standard deviation indicates that the data points are closer to the mean, whereas a larger standard deviation suggests greater dispersion from the mean.

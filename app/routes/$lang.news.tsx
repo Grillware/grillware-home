@@ -1,32 +1,34 @@
 import { useMemo, useCallback } from 'react'
 
-import { json, LoaderFunctionArgs } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs } from '@remix-run/cloudflare'
 import { Link, useLoaderData, useSearchParams } from '@remix-run/react'
 
 import { formatDate } from '~/components/utils/formatDate'
 import { getNewsList } from '~/newt.server'
+import { News } from '~/types/newt'
 
 import { css } from 'styled-system/css'
 import { flex } from 'styled-system/patterns'
 
 const ITEMS_PER_PAGE = 6
 
-export const loader = async ({ context }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
+	const { lang } = params
 	const spaceUid = context.cloudflare.env.NEWT_SPACE_UID
 	const appUid = context.cloudflare.env.NEWT_APP_UID
 	const token = context.cloudflare.env.NEWT_CDN_API_TOKEN
-	const newsList = await getNewsList(spaceUid, appUid, token)
+	const newsList = await getNewsList(spaceUid, appUid, token, lang!)
 	const sortedNewsList = newsList.sort((a, b) => {
 		return (
 			new Date(b._sys.createdAt).getTime() -
 			new Date(a._sys.createdAt).getTime()
 		)
 	})
-	return json({ news: sortedNewsList })
+	return Response.json({ news: sortedNewsList, lang })
 }
 
 export default function NewsPage() {
-	const { news } = useLoaderData<typeof loader>()
+	const { news, lang } = useLoaderData<typeof loader>()
 	const [searchParams, setSearchParams] = useSearchParams()
 	const currentPage = useMemo(
 		() => parseInt(searchParams.get('page') || '1', 10),
@@ -121,10 +123,10 @@ export default function NewsPage() {
 			) : (
 				<>
 					<ul className={styles.list}>
-						{paginatedNewsList.map((news) => (
+						{paginatedNewsList.map((news: News) => (
 							<Link
 								key={news._id}
-								to={`/post/${news.slug}`}
+								to={`/${lang}/post/${news.slug}`}
 								className={styles.link}
 							>
 								<li className={styles.listItem}>

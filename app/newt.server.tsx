@@ -1,21 +1,6 @@
 import { createClient } from 'newt-client-js'
 
-type NewtMeta = {
-	createdAt: Date
-}
-export type Tag = {
-	_id: string
-	slug: string
-	name: string
-}
-export type News = {
-	_id: string
-	_sys: NewtMeta
-	title: string
-	slug: string
-	body: string
-	tag: Tag
-}
+import { Tag, News } from './types/newt'
 
 const generateClient = (spaceUid: string, token: string) => {
 	return createClient({
@@ -28,7 +13,8 @@ const generateClient = (spaceUid: string, token: string) => {
 export const getNewsList = async (
 	spaceUid: string,
 	appUid: string,
-	token: string
+	token: string,
+	lang: string
 ) => {
 	const client = generateClient(spaceUid, token)
 	const { items: tag } = await client.getContents<Tag>({
@@ -43,16 +29,19 @@ export const getNewsList = async (
 		modelUid: 'article',
 		query: {
 			tag: { ne: tag[0]._id },
-			select: ['_id', '_sys', 'title', 'slug', 'tag'],
+			lang,
+			select: ['_id', '_sys', 'title', 'slug', 'tag', 'lang'],
 		},
 	})
+
 	return items
 }
 
 export const getArticleList = async (
 	spaceUid: string,
 	appUid: string,
-	token: string
+	token: string,
+	lang: string // 言語を引数として受け取る
 ) => {
 	const client = generateClient(spaceUid, token)
 	const { items: tag } = await client.getContents<Tag>({
@@ -67,7 +56,8 @@ export const getArticleList = async (
 		modelUid: 'article',
 		query: {
 			tag: tag[0]._id,
-			select: ['_id', '_sys', 'title', 'slug'],
+			lang,
+			select: ['_id', '_sys', 'title', 'slug', 'tag', 'lang'],
 		},
 	})
 	return items
@@ -77,7 +67,8 @@ export const getNewsBySlug = async (
 	spaceUid: string,
 	appUid: string,
 	token: string,
-	slug: string
+	slug: string,
+	lang?: string
 ) => {
 	const client = generateClient(spaceUid, token)
 	const { items } = await client.getContents<News>({
@@ -85,6 +76,7 @@ export const getNewsBySlug = async (
 		modelUid: 'article',
 		query: {
 			slug,
+			lang,
 		},
 	})
 

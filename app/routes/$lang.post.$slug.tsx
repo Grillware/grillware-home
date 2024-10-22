@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { json, LoaderFunctionArgs } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs } from '@remix-run/cloudflare'
 import { useLoaderData } from '@remix-run/react'
 
 import { formatDate } from '~/components/utils/formatDate'
@@ -8,19 +8,18 @@ import { getNewsBySlug } from '~/newt.server'
 
 import { css } from 'styled-system/css'
 
-// loaderでslugに基づくニュース記事のデータを取得
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
-	const { slug } = params
+	const { lang, slug } = params
 	const spaceUid = context.cloudflare.env.NEWT_SPACE_UID
 	const appUid = context.cloudflare.env.NEWT_APP_UID
 	const token = context.cloudflare.env.NEWT_CDN_API_TOKEN
-	const news = await getNewsBySlug(spaceUid, appUid, token, slug as string)
+	const news = await getNewsBySlug(spaceUid, appUid, token, slug!, lang!)
 
 	if (!news) {
 		throw new Response('Not Found', { status: 404 })
 	}
 
-	return json({ news })
+	return Response.json({ news })
 }
 
 // ニュース記事詳細ページコンポーネント
@@ -46,9 +45,9 @@ export default function NewsDetailPage() {
 			fontWeight: 'bold',
 			textAlign: 'center',
 			pos: 'relative',
-			letterSpacing: 'wide', // 文字間隔を広く
+			letterSpacing: 'wide',
 			color: 'slate.800',
-			textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)', // 軽いシャドウで立体感を
+			textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
 			_after: {
 				content: '""',
 				display: 'block',

@@ -17,11 +17,11 @@ export const SubmitButton = ({
 		button: css({
 			p: '0.75rem 1.5rem',
 			bg: {
-				base: 'blue.600',
-				_disabled: 'blue.200',
-				_hover: 'blue.400',
+				base: 'slate.800',
+				_disabled: 'slate.200',
+				_hover: 'slate.500',
 			},
-			color: '#fff',
+			color: 'slate.50',
 			border: 'none',
 			rounded: '4px',
 			cursor: { base: 'pointer', _disabled: 'not-allowed' },

@@ -1,0 +1,203 @@
+/* インラインの数式（デフォルト） */
+.katex-inline {
+	display: inline;
+	font-size: 1em;
+	margin: 0;
+}
+
+/* ブロックの数式 */
+.katex-block {
+	display: block;
+	text-align: center;
+	margin: 1em auto;
+	font-size: 1.25em;
+	max-width: 100%;
+}
+
+/* 数式を囲む装飾 */
+.katex-html {
+	background: var(--secondary-color);
+	padding: 10px;
+	border-radius: 5px;
+	margin: 0.5em auto;
+	box-shadow: 0px 2px 5px var(--shadow-color);
+	display: inline-block;
+}
+
+/* テーブルのスタイル */
+table {
+	width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+	border-collapse: collapse;
+	background-color: #fff;
+	box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* テーブルヘッダー */
+th {
+	background-color: var(--primary-color);
+	color: white;
+	padding: 12px;
+	text-align: left;
+	border: 1px solid #ddd;
+	font-weight: bold;
+}
+
+td {
+	padding: 12px;
+	text-align: left;
+	border: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: var(--hover-color);
+}
+
+/* 注釈のスタイル */
+blockquote {
+	background-color: var(--blockquote-bg);
+	border-left: 5px solid var(--primary-color);
+	padding: 10px;
+	margin: 20px 0;
+	font-style: italic;
+	color: var(--text-color);
+}
+
+/* ノートや注釈の小さな文字 */
+.note {
+	font-size: 0.9em;
+	color: var(--note-color);
+}
+
+/* フットノートの処理 */
+.footnotes {
+	margin-top: 40px;
+	font-size: 0.9em;
+	color: var(--text-color);
+}
+
+/* フットノートの番号部分 */
+.footnotes ol {
+	list-style-type: decimal;
+	margin: 0;
+	padding-left: 20px;
+}
+
+/* フットノート項目のスタイル */
+.footnotes li {
+	margin-bottom: 10px;
+}
+
+/* 各フットノート項目 */
+.footnotes li p {
+	margin: 0;
+	line-height: 1.6;
+}
+
+/* 「戻る」リンクのスタイル */
+.footnotes a {
+	color: var(--link-color);
+	text-decoration: none;
+	font-size: 1.1em;
+	padding-left: 0.5em;
+}
+
+.footnotes a:hover {
+	text-decoration: underline;
+}
+
+/* フットノート番号（参照元）にリンクを追加 */
+.footnotes a[data-footnote-backref] {
+	font-size: 0.9em;
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+.footnotes a[data-footnote-backref]:hover {
+	text-decoration: underline;
+}
+
+/* フットノートセクションの見出し */
+#footnote-label {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* フットノートの戻るリンク部分 */
+.footnotes .data-footnote-backref {
+	font-size: 1em;
+	margin-left: 5px;
+	color: var(--link-color);
+}
+
+.footnotes .data-footnote-backref:hover {
+	text-decoration: underline;
+}
+
+/* スクリーンリーダーのみ表示される見出し */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+}
+
+/* フットノートがクリックされた際に数式や参照元を明確にするための効果 */
+.footnotes li:hover {
+	background-color: #f8f9fa;
+}
+
+/* リストのスタイル */
+ul,
+ol {
+	margin-left: 20px;
+}
+
+/* リストアイテム */
+li {
+	margin-bottom: 10px;
+}
+
+/* LaTeX 数式のカスタムスタイル */
+.katex-display {
+	display: block;
+	margin: 20px 0;
+	text-align: center;
+}
+
+/* 文の間隔調整 */
+p {
+	margin-bottom: 20px;
+}
+
+/* セクションの余白 */
+h3 {
+	margin-top: 40px;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 5px;
+}
+
+h2 {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--text-color);
+	border-left: 5px solid var(--primary-color);
+	padding-left: 15px;
+	background-color: var(--secondary-color);
+}
+
+/* 横幅が狭くなった時のレスポンシブ対応 */
+@media (max-width: 768px) {
+	body {
+		padding: 12px;
+	}
+}

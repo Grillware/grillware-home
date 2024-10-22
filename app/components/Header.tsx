@@ -1,131 +1,181 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
-import { Link } from '@remix-run/react'
+import { Link, useLocation } from '@remix-run/react'
 
-import { center, grid, gridItem, stack } from 'styled-system/patterns'
+import { useLang } from '~/hooks/useLang'
+
+import { LangSwitch } from './utils/LangSwitch'
+
+import { css } from 'styled-system/css'
+import { flex } from 'styled-system/patterns'
 
 const styles = {
-	header: (isVisible: boolean) =>
-		stack({
-			pos: 'sticky',
-			top: 0,
-			p: '1rem 2rem',
-			boxShadow: 'lg',
-			backdropFilter: 'auto',
-			backdropBlur: 'sm',
-			zIndex: '999',
-			bg: 'white',
-			transition: 'transform 0.5s ease-in-out',
-			transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
-			maxW: '100%',
-		}),
-	menu: grid({
-		columns: 12,
+	header: flex({
+		pos: 'sticky',
+		top: 0,
+		p: '1rem 2rem',
+		boxShadow: 'lg',
+		backdropFilter: 'auto',
+		backdropBlur: 'sm',
+		zIndex: '999',
+		bg: 'white',
+		align: 'center',
+		justify: 'space-between',
+		transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
 	}),
-	title: gridItem({
-		colSpan: { base: 12, sm: 5 },
-		fontSize: '1.6rem',
-		fontWeight: 'bold',
+	headerHidden: css({
+		transform: 'translateY(-100%)',
+		opacity: 0,
+	}),
+	menuButton: css({
+		fontSize: { base: '1.6rem', sm: '2rem' },
 		cursor: 'pointer',
-		whiteSpace: 'nowrap',
+		bg: 'none',
+		border: 'none',
+		color: 'slate.800',
+		transition: 'transform 0.3s ease',
+		hideFrom: 'sm',
+		zIndex: '999',
 	}),
-	nav: gridItem({
-		fontSize: { base: 22, sm: 26 },
-		colSpan: { base: 12, sm: 7 },
-		display: 'flex',
-		justifyContent: { base: 'center', sm: 'flex-end' },
-		gap: 4,
+	menuButtonOpen: css({
+		transform: 'rotate(90deg)',
 	}),
-	navItem: center({
-		position: 'relative',
-		cursor: 'pointer',
-		minW: 0,
-		transition: 'color 0.4s ease',
-		px: { base: 1, sm: 4 },
-		color: { base: 'slate.800', _hover: 'violet.500' },
-		_after: {
-			content: '""',
-			pos: 'absolute',
-			bottom: 0,
-			left: 0,
-			w: '90%',
-			h: '1px',
-			bg: 'slate.500',
-			transform: 'translateX(-100%)',
-			opacity: 0,
-			transition: 'transform 0.3s ease, opacity 0.3s ease',
-		},
-		_hover: {
-			_after: { transform: 'translateX(0)', opacity: 1 },
-		},
+	menu: flex({
+		pos: { base: 'fixed', sm: 'static' },
+		top: { base: 0, sm: 'auto' },
+		right: { base: 0, sm: 'auto' },
+		w: { base: '38%', sm: 'auto' },
+		h: { base: '100vh', sm: 'auto' },
+		bg: { base: 'white', sm: 'transparent' },
+		boxShadow: { base: 'lg', sm: 'none' },
+		transform: { base: 'translateX(100%)', sm: 'none' },
+		transition: 'transform 0.3s ease-in-out',
+		direction: { base: 'column', sm: 'row' },
+		align: { base: 'end', sm: 'center' },
+		p: { base: '4rem 2rem 2rem', sm: '0' },
+		gap: { base: '1rem', sm: '2rem' },
+		zIndex: '998',
+	}),
+	menuOpen: css({
+		transform: 'translateX(0)',
+	}),
+	menuItem: css({
+		fontWeight: 'medium',
+		fontSize: { base: '1.2rem', sm: '1.6rem' },
+		color: 'slate.800',
+		textDecoration: 'none',
+		_hover: { color: 'violet.500' },
+		_active: { color: 'violet.500' }, // 現在ページ用のスタイル
+	}),
+	activeMenuItem: css({
+		color: 'violet.500',
+	}),
+	overlay: css({
+		pos: 'fixed',
+		top: 0,
+		left: 0,
+		w: '100%',
+		h: '100vh',
+		bg: 'rgba(0, 0, 0, 0.3)',
+		zIndex: '997',
+		opacity: 0,
+		hideFrom: 'sm',
+	}),
+	overlayVisible: css({
+		opacity: 1,
 	}),
 }
 
 export const Header = () => {
-	const [isVisible, setIsVisible] = useState(true)
-	const lastScrollY = useRef(0)
+	const { currentLang } = useLang()
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [isHeaderHidden, setIsHeaderHidden] = useState(false)
+	const location = useLocation()
 
-	const handleScroll = useCallback(() => {
-		if (window.scrollY > window.innerHeight / 2) {
-			setIsVisible(false)
-		} else if (window.scrollY < lastScrollY.current) {
-			setIsVisible(true)
+	const toggleMenu = () => setIsMenuOpen((prev) => !prev)
+
+	const handleOverlayKeyDown = (e: React.KeyboardEvent) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			toggleMenu()
 		}
-		lastScrollY.current = window.scrollY
-	}, [])
+	}
 
 	useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
+		const handleScroll = () => {
+			if (window.scrollY > 100) {
+				setIsHeaderHidden(true)
+			} else {
+				setIsHeaderHidden(false)
+			}
 		}
-	}, [handleScroll])
+
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
 
 	return (
-		<header className={styles.header(isVisible)}>
-			<menu className={styles.menu}>
-				<Link to={'/'} className={styles.title} aria-label="home">
-					GRILLWARE
-				</Link>
-				<nav className={styles.nav}>
+		<header
+			className={`${styles.header} ${isHeaderHidden ? styles.headerHidden : ''}`}
+		>
+			<Link
+				to={`/${currentLang}`}
+				aria-label="home"
+				className={css({
+					fontSize: '1.8rem',
+					fontWeight: 'bold',
+					cursor: 'pointer',
+				})}
+			>
+				GRILLWARE
+			</Link>
+			<button
+				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				className={`${styles.menuButton} ${isMenuOpen ? styles.menuButtonOpen : ''}`}
+				onClick={toggleMenu}
+			>
+				<img
+					src={isMenuOpen ? '/arrow_forward.svg' : '/menu.svg'}
+					alt="Menu Icon"
+					width="24"
+					height="24"
+				/>
+			</button>
+			<nav
+				className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}
+				aria-hidden={!isMenuOpen}
+			>
+				{[
+					{ path: `/about`, label: 'About' },
+					{ path: `/news`, label: 'News' },
+					{ path: `/studio`, label: 'Studio' },
+					{ path: `/lab`, label: 'Lab' },
+					{ path: `/contact`, label: 'Contact' },
+				].map(({ path, label }) => (
 					<Link
-						to={'/about'}
-						className={styles.navItem}
-						aria-label="about"
+						key={path}
+						to={`/${currentLang}${path}`}
+						className={`${styles.menuItem} ${
+							location.pathname === `/${currentLang}${path}`
+								? styles.activeMenuItem
+								: ''
+						}`}
+						onClick={toggleMenu}
 					>
-						About
+						{label}
 					</Link>
-					<Link
-						to={'/news'}
-						className={styles.navItem}
-						aria-label="news"
-					>
-						News
-					</Link>
-					<Link
-						to={'/judar'}
-						className={styles.navItem}
-						aria-label="judar"
-					>
-						Judar
-					</Link>
-					<Link
-						to={'/studio'}
-						className={styles.navItem}
-						aria-label="studio"
-					>
-						Studio
-					</Link>
-					<Link
-						to={'/contact'}
-						className={styles.navItem}
-						aria-label="contact"
-					>
-						Contact
-					</Link>
-				</nav>
-			</menu>
+				))}
+				<LangSwitch />
+			</nav>
+
+			{isMenuOpen && (
+				<div
+					className={`${styles.overlay} ${styles.overlayVisible}`}
+					role="button"
+					tabIndex={0}
+					onClick={toggleMenu}
+					onKeyDown={handleOverlayKeyDown}
+				/>
+			)}
 		</header>
 	)
 }

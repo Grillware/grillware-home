@@ -1,17 +1,35 @@
-import { MetaFunction, ActionFunction, json } from '@remix-run/cloudflare'
+import {
+	MetaFunction,
+	ActionFunction,
+	LoaderFunctionArgs,
+} from '@remix-run/cloudflare'
+import { useLoaderData } from '@remix-run/react'
 
 import { SubmitButton } from '~/components/utils/SubmitButton'
 import { TextField } from '~/components/utils/TextField'
 import { useForm } from '~/hooks/useForm'
+import { Lang } from '~/types/lang'
 
 import { css } from 'styled-system/css'
 import { flex } from 'styled-system/patterns'
 
 export const meta: MetaFunction = () => [
-	{ title: 'Grillware - Contact' },
-	{ name: 'description', content: 'This is a contact form' },
+	{
+		title: 'Grillware - Contact',
+	},
+	{
+		name: 'description',
+		content: 'This is a contact form',
+	},
 ]
 
+// loader関数で言語設定を取得
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+	const lang = params.lang === 'ja' ? Lang.JA : Lang.EN
+	return { lang }
+}
+
+// action関数はそのままですが、レスポンスの文言も言語に応じて調整可能です
 export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData()
 	const name = formData.get('name')
@@ -24,20 +42,22 @@ export const action: ActionFunction = async ({ request }) => {
 		typeof email !== 'string' ||
 		typeof message !== 'string'
 	) {
-		return json({ error: 'Invalid form submission' }, { status: 400 })
+		return Response.json(
+			{ error: 'Invalid form submission' },
+			{ status: 400 }
+		)
 	}
 
 	// フォームデータの処理
 	try {
-		console.info('Form submitted:', { name, email, message })
-		return json({ success: true })
-	} catch (error) {
-		console.error('Submission error:', error)
-		return json({ error: 'Submission failed' }, { status: 500 })
+		return Response.json({ success: true })
+	} catch (_) {
+		return Response.json({ error: 'Submission failed' }, { status: 500 })
 	}
 }
 
 export default function Contact() {
+	const { lang } = useLoaderData<typeof loader>()
 	const { formData, errors, handleChange, isSubmitting } = useForm({
 		name: '',
 		email: '',
@@ -75,14 +95,21 @@ export default function Contact() {
 		}),
 	}
 
+	// 言語に応じたフォームタイトルや説明
+	const title = lang === Lang.EN ? 'Contact Us' : 'お問い合わせ'
+	const nameLabel = lang === Lang.EN ? 'Name' : 'お名前'
+	const emailLabel = lang === Lang.EN ? 'Email Address' : 'メールアドレス'
+	const messageLabel = lang === Lang.EN ? 'Message' : 'メッセージ'
+	const submitButtonText = lang === Lang.EN ? 'Submit' : '送信'
+
 	return (
 		<section className={styles.container}>
-			<h1 className={styles.title}>Contact Us</h1>
+			<h1 className={styles.title}>{title}</h1>
 			<form className={styles.form} method="post">
 				<div className={styles.field}>
 					<TextField
 						id="name"
-						label="Name"
+						label={nameLabel}
 						name="name"
 						value={formData.name}
 						onChange={handleChange}
@@ -93,7 +120,7 @@ export default function Contact() {
 				<div className={styles.field}>
 					<TextField
 						id="email"
-						label="Email Address"
+						label={emailLabel}
 						name="email"
 						type="email"
 						value={formData.email}
@@ -105,7 +132,7 @@ export default function Contact() {
 				<div className={styles.field}>
 					<TextField
 						id="message"
-						label="Message"
+						label={messageLabel}
 						name="message"
 						value={formData.message}
 						onChange={handleChange}
@@ -121,7 +148,7 @@ export default function Contact() {
 							isSubmitting || Object.keys(errors).length > 0
 						}
 					>
-						Submit
+						{submitButtonText}
 					</SubmitButton>
 				</div>
 			</form>

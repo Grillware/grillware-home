@@ -7,5 +7,6 @@ interface Env {
 	GOOGLE_SHEET_KEY: string
 	GOOGLE_SHEET_NAME: string
 	GOOGLE_SHEET_ID: string
+	GITHUB_ACCESS_TOKEN: string
 	R2: R2Bucket
 }
