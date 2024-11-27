@@ -1,17 +1,16 @@
 import {
 	MetaFunction,
-	ActionFunction,
 	LoaderFunctionArgs,
+	ActionFunction,
+	ActionFunctionArgs,
 } from '@remix-run/cloudflare'
 import { useLoaderData } from '@remix-run/react'
 
 import { SubmitButton } from '~/components/utils/SubmitButton'
 import { TextField } from '~/components/utils/TextField'
 import { useForm } from '~/hooks/useForm'
+import { styles } from '~/styles/contactStyles'
 import { Lang } from '~/types/lang'
-
-import { css } from 'styled-system/css'
-import { flex } from 'styled-system/patterns'
 
 export const meta: MetaFunction = () => [
 	{
@@ -23,79 +22,147 @@ export const meta: MetaFunction = () => [
 	},
 ]
 
-// loader関数で言語設定を取得
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	const lang = params.lang === 'ja' ? Lang.JA : Lang.EN
-	return { lang }
+	const siteKey = context.cloudflare.env.TURNSTILE_SITE_KEY
+	return { lang, siteKey }
 }
 
-// action関数はそのままですが、レスポンスの文言も言語に応じて調整可能です
-export const action: ActionFunction = async ({ request }) => {
-	const formData = await request.formData()
-	const name = formData.get('name')
-	const email = formData.get('email')
-	const message = formData.get('message')
+const postmarkApiUrl = 'https://api.postmarkapp.com/email'
 
-	// フォームデータのバリデーション処理
-	if (
-		typeof name !== 'string' ||
-		typeof email !== 'string' ||
-		typeof message !== 'string'
-	) {
-		return Response.json(
-			{ error: 'Invalid form submission' },
+const verifyTurnstileToken = async (
+	token: string,
+	secretKey: string
+): Promise<boolean> => {
+	const response = await fetch(
+		'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: `secret=${secretKey}&response=${token}`,
+		}
+	)
+	const result: { success: boolean; [key: string]: unknown } =
+		await response.json()
+	return result.success
+}
+
+const sendEmail = async (url: string, token: string, payload: object) => {
+	const response = await fetch(url, {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+			'X-Postmark-Server-Token': token,
+		},
+		body: JSON.stringify(payload),
+	})
+	if (!response.ok) {
+		const error: { ErrorCode: number; Message: string } =
+			await response.json()
+		throw new Error(error?.Message)
+	}
+	return response
+}
+
+export const action: ActionFunction = async ({
+	request,
+	context,
+}: ActionFunctionArgs) => {
+	const formData = new URLSearchParams(await request.text())
+	const name = formData.get('name') || ''
+	const email = formData.get('email') || ''
+	const message = formData.get('message') || ''
+	const turnstileResponse = formData.get('cf-turnstile-response') || ''
+	const { POSTMARK_API_TOKEN, TURNSTILE_SECRET_KEY } = context.cloudflare.env
+
+	if (!name || !email || !message) {
+		return new Response(JSON.stringify({ error: 'Invalid input' }), {
+			status: 400,
+		})
+	}
+
+	// Turnstileのトークンを検証
+	const isHuman = await verifyTurnstileToken(
+		turnstileResponse,
+		TURNSTILE_SECRET_KEY!
+	)
+	if (!isHuman) {
+		return new Response(
+			JSON.stringify({ error: 'Verification failed. Please try again.' }),
 			{ status: 400 }
 		)
 	}
 
-	// フォームデータの処理
-	try {
-		return Response.json({ success: true })
-	} catch (_) {
-		return Response.json({ error: 'Submission failed' }, { status: 500 })
+	const emailPayloadToGrillware = {
+		From: 'info@grill-ware.com',
+		To: 'tokunaga@grill-ware.com',
+		Subject: `New Contact Form Submission from ${name}`,
+		HtmlBody: `
+			<strong>Name:</strong> ${name}<br/>
+			<strong>Email:</strong> ${email}<br/>
+			<strong>Message:</strong><br/>${message}`,
+		MessageStream: 'outbound',
 	}
+
+	const emailPayloadToUser = {
+		From: 'info@grill-ware.com',
+		To: email,
+		Subject: 'Thank you for contacting us',
+		HtmlBody: `
+			<p>Dear ${name},</p>
+			<p>Thank you for reaching out to Grillware. Your message has been sent successfully, and we will get back to you shortly.</p>
+			<p>Best regards, <br/>The Grillware Team</p>`,
+		MessageStream: 'outbound',
+	}
+
+	return sendEmail(
+		postmarkApiUrl,
+		POSTMARK_API_TOKEN!,
+		emailPayloadToGrillware
+	)
+		.then(async () => {
+			return sendEmail(
+				postmarkApiUrl,
+				POSTMARK_API_TOKEN!,
+				emailPayloadToUser
+			)
+				.then(() => {
+					return new Response(JSON.stringify({ success: true }), {
+						status: 200,
+					})
+				})
+				.catch((error) => {
+					return new Response(
+						JSON.stringify({
+							error: 'Failed to send confirmation email to user',
+							details: error,
+						}),
+						{ status: 500 }
+					)
+				})
+		})
+		.catch((error) => {
+			return new Response(
+				JSON.stringify({
+					error: 'Failed to send email to Grillware',
+					details: error,
+				}),
+				{ status: 500 }
+			)
+		})
 }
 
 export default function Contact() {
-	const { lang } = useLoaderData<typeof loader>()
+	const { lang, siteKey } = useLoaderData<typeof loader>()
 	const { formData, errors, handleChange, isSubmitting } = useForm({
 		name: '',
 		email: '',
 		message: '',
 	})
 
-	const styles = {
-		container: flex({
-			direction: 'column',
-			align: 'center',
-			minH: '100vh',
-			bg: 'slate.100',
-			p: '2rem',
-		}),
-		form: css({
-			w: '100%',
-			maxW: '500px',
-			bg: 'slate.50',
-			p: '2rem',
-			rounded: '8px',
-			boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-		}),
-		title: css({
-			fontSize: '2rem',
-			marginBottom: '1.5rem',
-			textAlign: 'center',
-			color: 'slate.700',
-		}),
-		field: css({
-			marginBottom: '1.5rem',
-		}),
-		buttonContainer: flex({
-			direction: 'column',
-			align: 'center',
-		}),
-	}
-
-	// 言語に応じたフォームタイトルや説明
 	const title = lang === Lang.EN ? 'Contact Us' : 'お問い合わせ'
 	const nameLabel = lang === Lang.EN ? 'Name' : 'お名前'
 	const emailLabel = lang === Lang.EN ? 'Email Address' : 'メールアドレス'
@@ -142,6 +209,15 @@ export default function Contact() {
 					/>
 				</div>
 				<div className={styles.buttonContainer}>
+					<div
+						className="cf-turnstile"
+						data-sitekey={siteKey}
+						data-callback="javascriptCallback"
+					></div>
+					<script
+						src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+						defer
+					></script>
 					<SubmitButton
 						isSubmitting={isSubmitting}
 						disabled={

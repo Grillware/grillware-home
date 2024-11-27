@@ -4,9 +4,8 @@ interface Env {
 	NEWT_SPACE_UID: string
 	NEWT_CDN_API_TOKEN: string
 	NEWT_APP_UID: string
-	GOOGLE_SHEET_KEY: string
-	GOOGLE_SHEET_NAME: string
-	GOOGLE_SHEET_ID: string
-	GITHUB_ACCESS_TOKEN: string
+	POSTMARK_API_TOKEN: string
+	TURNSTILE_SITE_KEY: string
+	TURNSTILE_SECRET_KEY: string
 	R2: R2Bucket
 }

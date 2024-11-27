@@ -36,14 +36,14 @@ export const Footer = () => {
 			</p>
 			<nav className={styles.socialNav}>
 				<Link
-					to="https://x.com/judar_grillware"
+					to="https://x.com/grillware"
 					aria-label="X"
 					className={styles.socialIcon}
 				>
 					<img src="/logo-x.svg" width={16} alt="Logo X"></img>
 				</Link>
 				<Link
-					to="https://www.youtube.com/channel/UCbHgL6VQB5vmFkExQkTJ4Bw"
+					to="https://www.youtube.com/@jokarium"
 					aria-label="Youtube"
 					className={styles.socialIcon}
 				>
@@ -55,6 +55,13 @@ export const Footer = () => {
 					className={styles.socialIcon}
 				>
 					<img src="/logo-ig.svg" width={16} alt="Logo IG"></img>
+				</Link>
+				<Link
+					to="https://github.com/Grillware"
+					aria-label="GitHub"
+					className={styles.socialIcon}
+				>
+					<img src="/logo-gh.svg" width={16} alt="GitHub IG"></img>
 				</Link>
 			</nav>
 		</footer>

@@ -4,9 +4,7 @@ import { LoaderFunction, MetaFunction } from '@remix-run/cloudflare'
 import { useLoaderData } from '@remix-run/react'
 
 import { formatDate } from '~/components/utils/formatDate'
-
-import { css } from 'styled-system/css'
-import { flex, hstack, vstack } from 'styled-system/patterns'
+import { styles } from '~/styles/judalStyles'
 
 export const meta: MetaFunction = () => [
 	{ title: 'Judar' },
@@ -102,41 +100,6 @@ export default function Index() {
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [currentPage, modelData])
-
-	const styles = {
-		section: flex({
-			flexWrap: 'wrap',
-			align: 'center',
-			justify: 'center',
-			px: 8,
-			gap: 8,
-			my: 8,
-		}),
-		card: vstack({
-			borderBottom: '1px solid #ddd',
-			pb: '1rem',
-			transition: 'transform 0.3s ease',
-			_hover: { transform: 'scale(1.01)' },
-		}),
-		thumbnail: css({
-			w: '300px',
-			h: 'auto',
-			objectFit: 'cover',
-		}),
-		info: hstack({}),
-		prefix: css({
-			fontWeight: 'normal',
-			fontSize: '1.0rem',
-			mr: 1,
-		}),
-		title: css({
-			fontWeight: 'bold',
-			fontSize: '1.2rem',
-		}),
-		date: css({
-			color: 'slate.500',
-		}),
-	}
 
 	return (
 		<section className={styles.section}>

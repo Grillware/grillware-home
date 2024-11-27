@@ -4,6 +4,7 @@ import { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare'
 import { Link, useLoaderData } from '@remix-run/react'
 
 import { getArticleList } from '~/newt.server'
+import { styles } from '~/styles/studioStyles'
 
 import { css } from 'styled-system/css'
 import { container, flex } from 'styled-system/patterns'
@@ -51,12 +52,12 @@ export const loader = async ({
 		],
 		oss: [
 			{
-				name: 'Digger',
+				name: 'Digman',
 				description:
 					lang === 'ja'
 						? '一人開発者向けのチケット管理TUIアプリケーション'
 						: 'Ticket management TUI application for single developers.',
-				url: 'https://github.com/4hoe8pow/digger',
+				url: 'https://github.com/grillware/digman',
 			},
 		],
 		lab: [
@@ -136,36 +137,6 @@ function Accordion({
 	isOpen: boolean
 	toggle: () => void
 }) {
-	const styles = {
-		sectionTitle: css({
-			display: 'flex',
-			alignItems: 'center',
-			cursor: 'pointer',
-			fontSize: '1.5rem',
-			fontWeight: 'medium',
-			mt: '1.5rem',
-			mb: '1rem',
-		}),
-		list: css({
-			listStyleType: 'none',
-			padding: 0,
-			fontSize: '1.125rem',
-			marginLeft: '1.5rem',
-		}),
-		listItem: css({ marginBottom: '0.5rem' }),
-		link: css({
-			color: 'slate.500',
-			textDecoration: 'none',
-			_hover: { textDecoration: 'underline', color: 'slate.300' },
-		}),
-		icon: css({
-			marginRight: '0.5rem',
-			fontSize: '0.8rem',
-			transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
-			transition: 'transform 0.3s ease',
-		}),
-	}
-
 	return (
 		<>
 			<button
@@ -173,7 +144,11 @@ function Accordion({
 				onClick={toggle}
 				aria-expanded={isOpen}
 			>
-				<span className={styles.icon}>▶</span>
+				<span
+					className={`${isOpen ? styles.iconOpen : styles.iconClose}`}
+				>
+					▶
+				</span>
 				{title}
 			</button>
 			{isOpen && (

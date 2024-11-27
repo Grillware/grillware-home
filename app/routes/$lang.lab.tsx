@@ -42,16 +42,11 @@ export const meta: MetaFunction = () => [
 	{ name: 'description', content: 'Grillware Studio - Lab Section' },
 ]
 
-// GitHub APIからMDXファイルを取得
-const fetchMDXFiles = async (
-	context: LoaderFunctionArgs['context'],
-	lang: string
-) => {
+const fetchMDXFiles = async (lang: string) => {
 	const response = await fetch(
-		`https://api.github.com/repos/4hoe8pow/judar/contents/app/routes/`,
+		`https://api.github.com/repos/grillware/grillware-home/contents/app/routes/`,
 		{
 			headers: {
-				Authorization: `token ${context.cloudflare.env.GITHUB_ACCESS_TOKEN}`,
 				'User-Agent': 'Grillware-Home',
 			},
 		}
@@ -89,14 +84,13 @@ const extractTitle = async (file: GitHubFile) => {
 
 export const loader = async ({
 	params,
-	context,
 }: LoaderFunctionArgs): Promise<LoaderData> => {
 	const { lang } = params
 	if (!lang || (lang !== 'ja' && lang !== 'en'))
 		throw new Response('Not Found', { status: 404 })
 
 	try {
-		const files = await fetchMDXFiles(context, lang)
+		const files = await fetchMDXFiles(lang)
 		const pages = await Promise.all(files.map(extractTitle))
 		return { pages, lang }
 	} catch (error: unknown) {
