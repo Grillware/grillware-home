@@ -27,7 +27,6 @@ const StyledLink = ({ href, children }: { href: string; children: string }) => (
 	</Link>
 )
 
-// コンテンツ生成関数
 const generateContent = (lang: Lang) => {
 	const links = [
 		{ href: 'https://remix.run/', text: 'Remix' },
@@ -41,48 +40,66 @@ const generateContent = (lang: Lang) => {
 
 	return lang === Lang.EN ? (
 		<>
-			<h1 className={styles.heading}>Hello there!</h1>
+			<h1 className={styles.heading}>Greetings</h1>
 			<div className={styles.paragraph}>
-				I&apos;m what you&apos;d call a &quot;one-man IT
-				department,&quot; working as an in-house SE. I’ve spent most of
-				my career in the classic world of web development, backend
-				systems, and databases. But when it comes to creative stuff like
-				3D modeling, animation, or lighting—it’s like trying to draw a
-				masterpiece with my non-dominant hand. This site was thrown
-				together using tools like
+				My initial exposure to IT was during my first year of
+				university, where I was required to type the `ls` command into a
+				Linux console during a lecture. From there, without much
+				deviation, I began my career at a company engaged in the SES
+				(System Engineering Services) industry. After two years of
+				on-site assignments, I left the company and currently work as an
+				in-house SE at a company entirely unrelated to IT.
+			</div>
+			<div className={styles.paragraph}>
+				Throughout my career, I have engaged broadly and shallowly in
+				conventional areas such as web development, backend systems, and
+				databases. This website was constructed using tools like
 				{links.map((link, idx) => (
 					<StyledLink key={idx} href={link.href}>
 						{link.text}
 					</StyledLink>
 				))}
-				. Honestly, the libraries do most of the heavy lifting, so hats
-				off to OSS for making my life easier.
+				, allowing me to enjoy a somewhat lazy coding experience thanks
+				to the excellent libraries and frameworks.
 			</div>
 			<div className={styles.paragraph}>
-				The whole reason this site exists is because I’m into a pretty
-				niche sport called &quot;Kabaddi.&quot; I wanted to help promote
-				it by making a 3D video explaining the rules and sharing it
-				online. I hit 30 this year and decided to dive into Houdini for
-				the first time—it’s been a fun but brain-melting experience.
-				This site is basically a place for me to share my Houdini
-				experiments and creations. I hope you find something cool here!
+				The inspiration for delving into skills like modeling and
+				animation stems from my involvement in promoting a niche sport
+				called &quot;Kabaddi&quot;. My personal project began with the
+				idea of creating a 3D CG video to explain the rules of the sport
+				and sharing it online. However, at the age of 30, I began
+				exploring Houdini for the first time, and I am now living a life
+				where much of my mental capacity is consumed by its challenges.
+			</div>
+			<div className={styles.paragraph}>
+				This website serves as a platform to showcase my practice works
+				and deliverables using Houdini. I sincerely hope you find something
+				of interest here.
 			</div>
 		</>
 	) : (
 		<>
 			<h1 className={styles.heading}>ご挨拶</h1>
 			<div className={styles.paragraph}>
-				私は「一人情シス」と呼ばれる立場で社内SEをしています。Web開発、バックエンド、データベースといったオーソドックスなシステム畑を長く歩んできましたが、モデリングやアニメーション、ライティングなどの創造的な作業は苦手で、私にとっては「絵を描く」ような感覚です。
-				このウェブサイトは
+				ITっぽいものに最初に触れたのは、大学時代でした。モデル論に関する講義でLinuxのコンソールにls
+				コマンドを打たされただけですが、真っ暗の画面に文字だけで入出力が行われているのを目の当たりにした体験でした。
+				そこから特に紆余曲折することなく、私はSES事業を展開する企業へ就職しました。
+				客先常駐を2年経験して退職し、現在はITと全く関係ない業種の企業でいわゆる一人情シスを長くやっています。
+			</div>
+			<div className={styles.paragraph}>
+				これまでに基幹システムの保守、DB設計、Web開発といったオーソドックスなシステム畑を広く浅く歩んできました。
+				当ウェブサイトも
 				{links.map((link, idx) => (
 					<StyledLink key={idx} href={link.href}>
 						{link.text}
 					</StyledLink>
 				))}
-				によって構築しており、かなり怠惰にコーディングできています。
+				によって構築しており、この優れたライブラリ群のおかげで怠惰にコーディングできています。
 			</div>
 			<div className={styles.paragraph}>
-				そもそものきっかけは、私が関わっているマイナースポーツ「カバディ」の振興・普及に寄与したいという思いでした。ルール説明用の3DCG動画を作り、それをどこかに投稿したいという個人的な企画から始まりました。今年30歳になって初めてHoudiniを触り、脳のメモリを大量に持っていかれながら生活を送っています。
+				モデラーやアニメーターといったクリエイター屋のスキルに興味を抱いたそもそものきっかけは、私が関わっているマイナースポーツ「カバディ」の振興・普及に寄与したいという思いからでした。
+				ルールを分かりやすく説明する3DCG動画を作り、それを公開したいという個人的な企画が原点です。
+				しかしながら、30歳になって初めてHoudiniを触り、脳のメモリを大量に持っていかれながら生活を送っています。
 			</div>
 			<div className={styles.paragraph}>
 				このウェブサイトは、Houdiniで制作した練習や成果物を展示する場として運営しています。
