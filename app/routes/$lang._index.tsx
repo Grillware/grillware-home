@@ -1,6 +1,8 @@
-import { MetaFunction } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare'
+import { useLoaderData } from '@remix-run/react'
 
 import { styles } from '~/styles/indexStyles'
+import { Lang } from '~/types/lang'
 
 export const meta: MetaFunction = () => [
 	{ title: 'Grillware' },
@@ -10,30 +12,51 @@ export const meta: MetaFunction = () => [
 	},
 ]
 
-const projects = [
-	{
-		name: 'Ancient',
-		description:
-			'A 3D CG short film inspired by the sport of Kabaddi, created using Houdini 20.5 and Unreal Engine 5. This project aims to explore the intersection of technology and the cultural heritage of Kabaddi.',
-	},
-	{
-		name: 'Judar',
-		description:
-			'On October 20, 2024, I began a 10,000-day journey to release daily assets made with Houdini. This initiative focuses on building expertise in 3D CGI over an extended period.',
-	},
-	{
-		name: 'Game Development',
-		description:
-			'A series of free mini-games developed in Unity, available on the App Store, covering a variety of genres.',
-	},
-	{
-		name: 'Asset Sales',
-		description:
-			"Offering various 3D models and VFX assets for sale on the 'FAB' marketplace.",
-	},
-]
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+	const { lang } = params
+	const projects = [
+		{
+			name: 'Jokarium 🎬',
+			description:
+				lang === Lang.EN
+					? 'A series of short animated films created using Houdini and Unreal Engine.'
+					: 'HoudiniとUnreal Engineによる短編アニメ集を配信します。',
+		},
+		{
+			name: 'Game Development 🪅',
+			description:
+				lang === Lang.EN
+					? 'A series of Unity-based mini-games available on the App Store.'
+					: 'Unity製のミニゲームシリーズで、App Storeで公開しています。',
+		},
+		{
+			name: 'OSS 🚧',
+			description:
+				lang === Lang.EN
+					? 'Open-source TUI applications, primarily developed in Rust.'
+					: '主にRustで開発したTUIアプリをOSSとして公開しています。',
+		},
+		{
+			name: 'Judar 🐦‍🔥',
+			description:
+				lang === Lang.EN
+					? 'A 10,000-day journey to release daily Houdini creations, which started on October 20, 2024.'
+					: '2024年10月20日からHoudiniに触り始め、練習過程を毎日公開する1万日間の旅を開始しました。',
+		},
+		{
+			name: 'Ancient Brief 🩲',
+			description:
+				lang === Lang.EN
+					? "Developing digital assets for briefs using Houdini's Copernicus and Vellum."
+					: 'HoudiniのCopernicusとVellumでパンツをつくるデジタルアセットを誠意を込めて開発中です。',
+		},
+	]
+	return projects
+}
 
 export default function Index() {
+	const projects = useLoaderData<typeof loader>()
+
 	return (
 		<section className={styles.container}>
 			<div className={styles.message}>
