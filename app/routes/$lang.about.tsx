@@ -73,8 +73,8 @@ const generateContent = (lang: Lang) => {
 			</div>
 			<div className={styles.paragraph}>
 				This website serves as a platform to showcase my practice works
-				and deliverables using Houdini. I sincerely hope you find something
-				of interest here.
+				and deliverables using Houdini. I sincerely hope you find
+				something of interest here.
 			</div>
 		</>
 	) : (

@@ -126,11 +126,7 @@ export const Header = () => {
 					cursor: 'pointer',
 				})}
 			>
-				<img
-					src='our_logo.svg'
-					alt="Menu Icon"
-					width="144"
-				/>
+				<img src="our_logo.svg" alt="Menu Icon" width="144" />
 			</Link>
 			<button
 				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
