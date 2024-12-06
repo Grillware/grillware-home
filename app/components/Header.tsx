@@ -65,7 +65,7 @@ const styles = {
 		color: 'slate.800',
 		textDecoration: 'none',
 		_hover: { color: 'violet.500' },
-		_active: { color: 'violet.500' }, // 現在ページ用のスタイル
+		_active: { color: 'violet.500' },
 	}),
 	activeMenuItem: css({
 		color: 'violet.500',
@@ -126,7 +126,11 @@ export const Header = () => {
 					cursor: 'pointer',
 				})}
 			>
-				GRILLWARE
+				<img
+					src='our_logo.svg'
+					alt="Menu Icon"
+					width="144"
+				/>
 			</Link>
 			<button
 				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
