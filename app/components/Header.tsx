@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { Link, useLocation } from '@remix-run/react'
 
+import logo from '~/components/assets/our_logo.svg'
 import { useLang } from '~/hooks/useLang'
 
 import { LangSwitch } from './utils/LangSwitch'
@@ -126,7 +127,7 @@ export const Header = () => {
 					cursor: 'pointer',
 				})}
 			>
-				<img src="our_logo.svg" alt="Menu Icon" width="144" />
+				<img src={logo} alt="Menu Icon" width="144" />
 			</Link>
 			<button
 				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
