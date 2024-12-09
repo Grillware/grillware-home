@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1500"
+   height="500"
+   viewBox="0 0 1500 500"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="our_logo.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.40666667"
+     inkscape:cx="692.21311"
+     inkscape:cy="533.60655"
+     inkscape:window-width="1409"
+     inkscape:window-height="1032"
+     inkscape:window-x="305"
+     inkscape:window-y="502"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d8601a;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#f3636f;stop-opacity:0.47668397;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient701"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d8601a;stop-opacity:1;"
+         offset="0"
+         id="stop700" />
+      <stop
+         style="stop-color:#a6111d;stop-opacity:0.47668394;"
+         offset="1"
+         id="stop701" />
+    </linearGradient>
+    <rect
+       x="132.78689"
+       y="67.622951"
+       width="1272.541"
+       height="357.78689"
+       id="rect1" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient719"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.3988299,0,0,1.4125168,-1751.4968,-110.35787)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient720"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7356552,0,0,1.4000688,-2329.5228,-107.30321)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient21"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.734967,0,0,1.4105687,-1987.5671,-109.87982)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient22"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.95508435,0,0,1.404984,-986.89192,-108.50938)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient24"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.4547066,0,0,1.4121777,-1222.6171,-112.7337)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient25"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5666443,0,0,1.4115177,-1204.6218,-110.11271)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient26"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2321865,0,0,1.4030637,-830.34226,-108.03813)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient27"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1205223,0,0,1.4143184,-372.60251,-108.34093)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient28"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9550844,0,0,1.404984,-284.81005,-110.96838)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient29"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.734967,0,0,1.4105687,-1070.5671,-109.8798)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient30"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1210683,0,0,1.4038045,-293.70503,-108.21992)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient31"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7356552,0,0,1.4000688,-968.52292,-107.30321)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <rect
+       x="132.7869"
+       y="67.622948"
+       width="1272.541"
+       height="357.7869"
+       id="rect1-5" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient32"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.597727,0,0,4.4497656,-1994.2958,-326.75644)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <rect
+       x="132.7869"
+       y="67.622948"
+       width="1272.541"
+       height="357.7869"
+       id="rect1-5-6" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient33"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.734967,0,0,1.4105687,-1787.5671,-109.87983)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient34"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7356552,0,0,1.4000688,-1887.5228,-107.30323)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient143"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2872787,0,0,1.4132149,-680.99709,-108.7587)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient701"
+       id="linearGradient144"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2878664,0,0,1.4027052,-1074.6493,-105.40226)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient175"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1205223,0,0,1.4143184,-1287.7838,-108.07865)"
+       x1="1365.0924"
+       y1="245.39188"
+       x2="1411.7104"
+       y2="245.39188" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath175">
+      <text
+         xml:space="preserve"
+         id="text175"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan19">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath176">
+      <text
+         xml:space="preserve"
+         id="text176"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan20">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath177">
+      <text
+         xml:space="preserve"
+         id="text177"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan21">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath178">
+      <text
+         xml:space="preserve"
+         id="text178"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan22">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath179">
+      <text
+         xml:space="preserve"
+         id="text179"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan23">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath180">
+      <text
+         xml:space="preserve"
+         id="text180"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan24">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath181">
+      <text
+         xml:space="preserve"
+         id="text181"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan25">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath182">
+      <text
+         xml:space="preserve"
+         id="text182"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan26">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath183">
+      <text
+         xml:space="preserve"
+         id="text183"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan27">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath184">
+      <text
+         xml:space="preserve"
+         id="text184"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(0,1.3897779,1.484624,0,106.34662,-319.98905)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan28">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath185">
+      <text
+         xml:space="preserve"
+         id="text185"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan29">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath186">
+      <text
+         xml:space="preserve"
+         id="text186"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan30">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath187">
+      <text
+         xml:space="preserve"
+         id="text187"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan31">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath188">
+      <text
+         xml:space="preserve"
+         id="text188"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan32">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath189">
+      <text
+         xml:space="preserve"
+         id="text189"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan33">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath190">
+      <text
+         xml:space="preserve"
+         id="text190"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan34">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath191">
+      <text
+         xml:space="preserve"
+         id="text191"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan35">grillware</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath192">
+      <text
+         xml:space="preserve"
+         id="text192"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:238.343px;line-height:37.3333px;font-family:'Gotham Black';-inkscape-font-specification:'Gotham Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.05px;white-space:pre;shape-inside:url(#rect1-5-6);display:inline;fill:#cfccc5;fill-opacity:0;stroke:#f16d9d;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-dashoffset:81.9"
+         transform="matrix(1.3897779,0,0,1.484624,-319.98905,106.34662)"><tspan
+           x="237.11462"
+           y="162.61302"
+           id="tspan36">grillware</tspan></text>
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5"
+       clip-path="url(#clipPath192)"
+       style="fill:url(#linearGradient719);stroke:#de5c15;stroke-width:7.25712;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 161.64595,-60.814064 h 57.98878 V 533.33883 h -57.98878 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-81"
+       clip-path="url(#clipPath191)"
+       style="fill:url(#linearGradient175);stroke:#de5c15;stroke-width:6.49933;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 244.72507,-58.471649 h 46.45148 V 536.43906 h -46.45148 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04"
+       clip-path="url(#clipPath190)"
+       style="fill:url(#linearGradient720);stroke:#de5c15;stroke-width:8.04806;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="M 44.287327,-58.196018 H 116.23927 V 530.72079 H 44.287327 Z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-74"
+       clip-path="url(#clipPath189)"
+       style="fill:url(#linearGradient27);stroke:#de5c15;stroke-width:6.49933;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1159.9065,-58.73394 h 46.4515 v 594.91071 h -46.4515 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-5"
+       clip-path="url(#clipPath188)"
+       style="fill:url(#linearGradient28);stroke:#de5c15;stroke-width:5.98055;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1021.4339,-61.688786 h 39.5932 V 529.29553 h -39.5932 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-74-8"
+       clip-path="url(#clipPath187)"
+       style="fill:url(#linearGradient29);stroke:#de5c15;stroke-width:8.07658;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1302.3016,-60.404331 h 71.9235 V 532.9291 h -71.9235 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-5-6"
+       clip-path="url(#clipPath186)"
+       style="fill:url(#linearGradient30);stroke:#de5c15;stroke-width:6.4767;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1239.5509,-58.981697 h 46.4741 V 531.50646 h -46.4741 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-5-6-6"
+       clip-path="url(#clipPath185)"
+       style="fill:url(#linearGradient31);stroke:#de5c15;stroke-width:8.04806;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1405.2874,-58.196018 h 71.9519 V 530.72079 h -71.9519 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-5-6-6-1"
+       clip-path="url(#clipPath184)"
+       style="fill:url(#linearGradient32);stroke:#de5c15;stroke-width:13.7659;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       transform="matrix(0,1,1,0,0,0)"
+       d="m 190.87358,-170.68153 h 66.2341 V 1701.042 h -66.2341 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-8"
+       clip-path="url(#clipPath183)"
+       style="fill:url(#linearGradient25);stroke:#de5c15;stroke-width:7.67738;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 938.03638,-60.603931 h 64.94552 V 533.12867 h -64.94552 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-8-5"
+       clip-path="url(#clipPath182)"
+       style="fill:url(#linearGradient143);stroke:#de5c15;stroke-width:6.96346;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 1079.5801,-59.190399 h 53.3644 V 535.25613 h -53.3644 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-73"
+       clip-path="url(#clipPath181)"
+       style="fill:url(#linearGradient26);stroke:#de5c15;stroke-width:6.78831;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 854.88702,-58.825893 h 51.08055 V 531.35068 h -51.08055 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-7"
+       clip-path="url(#clipPath180)"
+       style="fill:url(#linearGradient21);stroke:#de5c15;stroke-width:8.07658;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 385.30157,-60.404331 h 71.92342 V 532.9291 h -71.92342 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-7-7"
+       clip-path="url(#clipPath179)"
+       style="fill:url(#linearGradient24);stroke:#de5c15;stroke-width:7.39975;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 766.94678,-63.201759 h 60.30516 V 530.80849 h -60.30516 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-7"
+       clip-path="url(#clipPath178)"
+       style="fill:url(#linearGradient22);stroke:#de5c15;stroke-width:5.98055;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 319.35196,-59.229771 h 39.59322 V 531.75454 h -39.59322 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-5-7-1"
+       clip-path="url(#clipPath177)"
+       style="fill:url(#linearGradient33);stroke:#de5c15;stroke-width:8.07658;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 585.30164,-60.404331 h 71.92341 V 532.9291 h -71.92341 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-7-2"
+       clip-path="url(#clipPath176)"
+       style="fill:url(#linearGradient34);stroke:#de5c15;stroke-width:8.04806;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 486.28732,-58.196018 h 71.95195 V 530.72079 h -71.95195 z" />
+    <path
+       id="rect2-2-14-0-9-01-7-94-1-7-04-7-2-6"
+       clip-path="url(#clipPath175)"
+       style="fill:url(#linearGradient144);stroke:#de5c15;stroke-width:6.93911;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8;stroke-dashoffset:81.9;stroke-opacity:0.00371746"
+       inkscape:label="rect2"
+       d="m 686.73181,-56.202576 h 53.38877 V 533.82318 h -53.38877 z" />
+  </g>
+</svg>
